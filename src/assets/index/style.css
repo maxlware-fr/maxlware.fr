@@ -117,51 +117,6 @@ M   M  A   A  X   X  LLLLL  W   W  A   A  R   R  EEEEE
       background: linear-gradient(90deg, transparent, var(--primary), transparent);
     }
 
-    .projects {
-      margin-top: 2%;
-      margin-left: 21%;
-      font-size: 2.0vh;
-    }
-
-    .project-box {
-      width: 68%;
-      padding: 4vh;
-      background: rgba(110, 72, 170, 0.1);
-      border-radius: 2vh;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(3.2px);
-      border: 1px solid rgba(157, 80, 187, 0.3);
-      overflow: hidden;
-      margin-bottom: 3vh;
-    }
-
-    .project {
-      display: flex;
-      align-items: center;
-      justify-content: left;
-      overflow: hidden;
-      gap: 2rem;
-    }
-
-    .auto-resizable-iframe {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-    }
-
-    .auto-resizable-iframe iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .blink {
-      animation: blink 1s step-end infinite;
-    }
-
     @keyframes blink {
       from, to { opacity: 1; }
       50% { opacity: 0; }
@@ -171,33 +126,3 @@ M   M  A   A  X   X  LLLLL  W   W  A   A  R   R  EEEEE
       content: "_";
       animation: blink 1s step-end infinite;
     }
-
-    /*
-    .pixel-clouds {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: 
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="200" viewBox="0 0 600 200"><filter id="pixelate"><feFlood width="8" height="8" result="flood"/><feComposite width="8" height="8" operator="in" in="flood" result="composite"/><feMorphology operator="dilate" radius="4"/></filter><rect width="600" height="200" fill="%23000000"/><g filter="url(%23pixelate)" opacity="0.7"><circle cx="100" cy="80" r="30" fill="%23ffffff"/><circle cx="250" cy="70" r="40" fill="%23ffffff"/><circle cx="400" cy="90" r="35" fill="%23ffffff"/><circle cx="550" cy="80" r="30" fill="%23ffffff"/><circle cx="150" cy="140" r="35" fill="%23ffffff"/><circle cx="300" cy="130" r="30" fill="%23ffffff"/><circle cx="450" cy="150" r="40" fill="%23ffffff"/></g></svg>') repeat-x;
-      background-size: 600px 200px;
-      animation: cloudMove 60s linear infinite;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    @keyframes cloudMove {
-      from { background-position: 0 0; }
-      to { background-position: -600px 0; }
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 3;
-    }
-
-    .terminal-effect {
-      z-index: 2;
-    }
-    */
