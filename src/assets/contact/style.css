@@ -6,61 +6,55 @@ M   M  A   A   X X   L      WW WW  A   A  R  R   E
 M   M  A   A  X   X  LLLLL  W   W  A   A  R   R  EEEEE
 */
 
-@font-face {
-    font-family: 'Console';
-    src: local('Courier New'), local('Consolas'), monospace;
-}
-
-:root {
-    --primary: #6e48aa;
-    --dark: #000000;
-    --light: #ffffff;
-}
-
-body {
-    background-color: var(--dark);
-    margin: 0;
-    font-family: 'Console', monospace;
-    color: var(--light);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-}
-
-.hero-content {
-    padding: 2rem;
-    max-width: 800px;
-    text-shadow: 0 0 5px rgba(79, 195, 247, 0.5);
-}
-
-.title {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.cursor::after {
-    content: "_";
-    animation: blink 1s step-end infinite;
-}
-
-.subtitle {
-    color: #bdbdbd;
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-
-a {
-    color: #4fc3f7;
-    text-decoration: none;
-    font-weight: bold;
-}
-a:hover {
-    text-decoration: underline;
-}
-
-@keyframes blink {
-    from, to { opacity: 1; }
-    50% { opacity: 0; }
-}
+    :root{
+      --bg:#000;
+      --fg:#fff;
+      --glass:rgba(255,255,255,0.06);
+      --border:rgba(255,255,255,0.12);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      background:var(--bg);
+      color:var(--fg);
+      font-family:monospace;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      padding:1.5rem;
+    }
+    .box{
+      width:100%;
+      max-width:760px;
+      border:1px solid var(--border);
+      border-radius:18px;
+      background:var(--glass);
+      backdrop-filter:blur(12px) saturate(140%);
+      padding:2rem 2.4rem;
+      display:flex;
+      flex-direction:column;
+      gap:1.8rem;
+      text-align:center;
+      box-shadow:0 10px 40px rgba(0,0,0,0.6);
+    }
+    h1{
+      font-size:1.8rem;
+      font-weight:700;
+      letter-spacing:1px;
+      opacity:0.95;
+    }
+    .iframe-wrap{
+      width:100%;
+      height:520px;
+      border-radius:14px;
+      overflow:hidden;
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.1);
+      box-shadow:0 6px 22px rgba(0,0,0,0.45);
+      backdrop-filter:blur(8px);
+    }
+    iframe{
+      width:100%;
+      height:100%;
+      border:0;
+    }
