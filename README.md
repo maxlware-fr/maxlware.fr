@@ -1,8 +1,10 @@
-<img width="1280" height="720" alt="Copie de Copie de Copie de Maxlware" src="https://github.com/user-attachments/assets/89547925-a8aa-4598-9e73-8e54d5f419d7" />
+<p align=center>
+<img width="1280" height="720" alt="txt seulement bannière" src="https://github.com/user-attachments/assets/8e43aa3a-ab80-4a14-bd8d-44b8bcbdfb70" />
+</p>
 
 # Maxlware Website
 
-Welcome to the official website of Maxlware, independent developer.
+Welcome to the official website of Maxlware, a independent developer based in France.
 
 ## About
 
