@@ -7,109 +7,64 @@ M   M  A   A  X   X  LLLLL  W   W  A   A  R   R  EEEEE
 -->
 
 <!DOCTYPE html>
-<html data-theme="dark" lang="fr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/index/style.css">
-  <link rel="icon" href="assets/cd.png">
-  <title>Maxlware - Independent developer in France.</title>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D89N2LGFXX"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maxlware -</title>
+  <link rel="icon" href="assets/logo.png">
 
-<meta name="description" content="Official website of Maxlware." />
+  <meta name="description" content="Official website of Maxlware." />
 
-    <meta property="og:title" content="Maxlware - Independent developer in France.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://maxlware.fr/">
-    <meta property="og:description" content="Independent developer in France. - Specialized in coding and content creation.">
-    <meta property="og:site_name" content="Maxlware">
-    <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Maxlware - Independent developer in France.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maxlware.fr/">
+  <meta property="og:description" content="Independent developer in France. - Specialized in coding and content creation.">
+  <meta property="og:site_name" content="Maxlware">
+  <meta property="og:locale" content="fr_FR">
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Maxlware - Independent developer in France.">
-    <meta name="twitter:description" content="Independent developer in France. - Specialized in coding and content creation.">
-    
-    <link rel="canonical" href="https://maxlware.fr/">
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Maxlware - Independent developer in France.">
+  <meta name="twitter:description" content="Independent developer in France. - Specialized in coding and content creation.">
+  
+  <link rel="canonical" href="https://maxlware.fr/">
 
-  gtag('config', 'G-D89N2LGFXX');
-</script>
+  <style>
+    body {
+      font-family: "Courier New", monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100dvh;
+      margin: 0;
+      background: #000;
+      color: #fff;
+      text-align: center;
+    }
+    img {
+      max-width: 100px;
+      margin-bottom: 10px;
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const lang = navigator.language.toLowerCase();
+      const target = lang.startsWith("fr") ? "fr-fr.html" : "en-en.html";
+      window.location.href = target;
+    });
+  </script>
 </head>
 <body>
-  <audio id="click-sound" src="assets/index/click.mp3" preload="auto"></audio>
+  <noscript>
+    <style>
+      body { color: #f33; }
+    </style>
+    <img src="assets/error.jpg" alt="logo"><br>
+    Javascript is not enabled. Please enable it.<br>
+    JavaScript n’est pas activé. Active-le pour continuer.
+  </noscript>
 
-<div class="diapo-container">
-  <div class="diapo" id="diapo">
-    <span class="subtitle">Partenaire</span>
-    <div class="gradient-left"></div>
-    <div class="gradient-right"></div>
-    <a href="https://iptron.xyz" target="_blank">
-      <img src="assets/logo_iptron.png" alt="Partenaire">
-    </a>
-  </div>
-</div>
-
-<div class="hero">
-  <div class="pixel-clouds"></div>
-  
-  <div class="terminal-effect"></div>
-  
-  <div class="hero-content">
-    <div class="ascii-art">
-M   M  AAAAA  X   X  L      W   W  AAAAA  RRRR   EEEEE
-MM MM  A   A   X X   L      W   W  A   A  R   R  E
-M M M  AAAAA    X    L      W W W  AAAAA  RRRR   EEE
-M   M  A   A   X X   L      WW WW  A   A  R  R   E
-M   M  A   A  X   X  LLLLL  W   W  A   A  R   R  EEEEE
-<iframe src="https://statuts.maxlware.fr/en/badge?theme=dark" width="250" height="30" frameborder="0" scrolling="no" style="color-scheme: normal"></iframe>
-    </div>
-      
-      <h1 class="title">Maxlware<span class="blink">_</span></h1>
-      <p class="subtitle">Independent developer in France.</p>
-      
-      <p>Specialized in coding and content creation.</p>
-      <p>Contact : <a href="mailto:contact@maxlware.fr">contact@maxlware.fr</a></p>
-      
-      <p>Currently working on several projects:</p>
-      <ul>
-        <li>A web navigator.</li>
-        <li>A certified Discord bot.</li>
-        <li>And more...</li>
-      </ul>
-      
-      <div style="margin-top: 2rem;">
-        <span class="tech-badge">HTML</span>
-        <span class="tech-badge">CSS</span>
-        <span class="tech-badge">JavaScript</span>
-        <span class="tech-badge">Node.js</span>
-        <span class="tech-badge">Python</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="separator">
-    <div class="separator-line"></div>
-  </div>
-  
-  <div style="text-align: center; padding: 3vh; font-size: 1.5vh;">
-    <p>█ █ ███  █ ███ █  █ ████  █  ███ █</p>
-    <p>
-      <a href="credits.html">&lt;Credits&gt;</a> |
-      <a href="contact.html">&lt;Contact&gt;</a>
-      <br>
-      <a href="https://github.com/maxlware-fr" target="_blank">&lt;GitHub&gt;</a> |
-      <a href="https://x.com/maxlware_pro" target="_blank">&lt;Twitter&gt;</a> |
-      <a href="https://discord.gg/5rUDZ4kXdS" target="_blank">&lt;Discord&gt;</a>
-      <br>
-      <a href="terms.html">&lt;Terms of use&gt;</a> |
-      <a href="privacy.html">&lt;Privacy&gt;</a> |
-      <a href="legal.html">&lt;Legal notice&gt;</a>
-    </p>
-  </div>
-
-    <script src="assets/index/script.js"></script>
 </body>
 </html>
