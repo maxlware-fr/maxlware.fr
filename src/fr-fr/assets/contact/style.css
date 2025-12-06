@@ -1,0 +1,93 @@
+/*
+M   M  AAAAA  X   X  L      W   W  AAAAA  RRRR   EEEEE
+MM MM  A   A   X X   L      W   W  A   A  R   R  E
+M M M  AAAAA    X    L      W W W  AAAAA  RRRR   EEE
+M   M  A   A   X X   L      WW WW  A   A  R  R   E
+M   M  A   A  X   X  LLLLL  W   W  A   A  R   R  EEEEE
+*/
+
+@font-face {
+    font-family: 'Console';
+    src: local('Courier New'), local('Consolas'), monospace;
+}
+
+:root {
+    --primary: #6e48aa;
+    --dark: #000000;
+    --light: #ffffff;
+    --accent: #4fc3f7;
+}
+
+body {
+    background-color: var(--dark);
+    margin: 0;
+    font-family: 'Console', monospace;
+    color: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.hero-content {
+    padding: 2rem;
+    max-width: 900px;
+    text-shadow: 0 0 5px rgba(79, 195, 247, 0.5);
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.cursor::after {
+    content: "_";
+    animation: blink 1s step-end infinite;
+}
+
+.subtitle {
+    color: #bdbdbd;
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+}
+
+.contact-card {
+    display: block;
+    padding: 1.5rem;
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--light);
+    box-shadow: 0 0 15px rgba(79, 195, 247, 0.2);
+    transition: 0.3s ease;
+    background: rgba(20, 20, 20, 0.4);
+    backdrop-filter: blur(6px);
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(79, 195, 247, 0.5);
+    border-color: white;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-desc {
+    font-size: 1rem;
+    color: #bdbdbd;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
