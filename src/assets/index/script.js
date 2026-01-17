@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const partenaires = [
     { logo: "assets/logo_iptron.png", lien: "https://iptron.xyz" },
     { logo: "assets/logo_cloud.png", lien: "https://cryptdev.fr" },
-    { logo: "assets/logo_mxlw_dev.png" , lien: "https://dev.maxlware.fr" };
+    { logo: "assets/logo_mxlw_dev.png" , lien: "https://dev.maxlware.fr" },
     { logo: "assets/logo_galactix.png" , lien: "https://galactixhosting.fr/index.php" }
   ];
 
