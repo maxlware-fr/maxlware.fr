@@ -29,7 +29,7 @@ This website showcases projects, software, and web development work by Maxlware.
 
 ## Contact
 
-Email: [contact@maxlware.fr](mailto:contact@maxlware.fr)
+Email: [contact@maxlware.com](mailto:contact@maxlware.com)
 
 ## License
 The repo use Apache license.
