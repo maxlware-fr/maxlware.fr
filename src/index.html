@@ -47,14 +47,27 @@ M   M  A   A  X   X  LLLLL  W   W  A   A  R   R  EEEEE
       margin-bottom: 10px;
     }
   </style>
+<script>
+  document.addEventListener("DOMContentLoaded", async () => {
+    try {
+      const res = await fetch("https://api.maxlware.com/v1/com/access", {
+        cache: "no-store"
+      });
+      const data = await res.json();
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
+      if (data.com_access === "false") {
+        window.location.href = "maintenance.html";
+        return;
+      }
       const lang = navigator.language.toLowerCase();
       const target = lang.startsWith("fr") ? "fr-fr.html" : "en-en.html";
       window.location.href = target;
-    });
-  </script>
+
+    } catch (e) {
+      window.location.href = "maintenance.html";
+    }
+  });
+</script>
 </head>
 <body>
   <noscript>
@@ -65,6 +78,5 @@ M   M  A   A  X   X  LLLLL  W   W  A   A  R   R  EEEEE
     Javascript is not enabled. Please enable it.<br>
     JavaScript n’est pas activé. Active-le pour continuer.
   </noscript>
-
 </body>
 </html>
