@@ -33,3 +33,4 @@ Email: [contact@maxlware.com](mailto:contact@maxlware.com)
 
 ## License
 The repo use Apache license.
+[![maxlware.com](https://github.com/maxlware-fr/maxlware.com/actions/workflows/build.yml/badge.svg)](https://github.com/maxlware-fr/maxlware.com/actions/workflows/build.yml)
