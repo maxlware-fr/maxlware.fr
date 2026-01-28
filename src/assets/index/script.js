@@ -93,3 +93,98 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 })();
+
+async function fetchAndDisplayNotification() {
+    try {
+        const response = await fetch('https://api.maxlware.com/v1/com/notification');
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        if (data.actived === "true") {
+            const existingBanner = document.getElementById('notification-banner');
+            if (existingBanner) {
+                existingBanner.remove();
+            }
+            
+            createNotificationBanner(data);
+        }
+    } catch (error) {
+        console.error('Erreur lors de la récupération de la notification:', error);
+    }
+}
+
+function createNotificationBanner(notificationData) {
+    const banner = document.createElement('div');
+    banner.className = 'notification-banner';
+    banner.id = 'notification-banner';
+    
+    if (notificationData.marker) {
+        banner.setAttribute('data-marker', notificationData.marker.toLowerCase());
+    }
+    
+    banner.innerHTML = `
+        <div class="notification-content">
+            <span class="notification-message">${notificationData.message || ''}</span>
+            ${notificationData.autor ? `<span class="notification-author">— ${notificationData.autor}</span>` : ''}
+        </div>
+        <button class="close-notification" id="close-notification" aria-label="Fermer la notification">×</button>
+    `;
+    
+    document.body.appendChild(banner);
+    
+    setTimeout(() => {
+        banner.classList.add('show');
+    }, 100);
+    
+    const closeButton = banner.querySelector('#close-notification');
+    closeButton.addEventListener('click', () => {
+        closeNotification(banner);
+    });
+}
+
+function closeNotification(banner) {
+    banner.classList.remove('show');
+    banner.classList.add('hide');
+    
+    setTimeout(() => {
+        if (banner.parentNode) {
+            banner.remove();
+        }
+    }, 300);
+}
+
+function shouldShowNotification() {
+    const lastClosed = localStorage.getItem('notificationLastClosed');
+    if (lastClosed) {
+        const lastClosedDate = new Date(lastClosed);
+        const now = new Date();
+        const hoursDiff = (now - lastClosedDate) / (1000 * 60 * 60);
+        
+        if (hoursDiff < 24) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function saveCloseTime() {
+    localStorage.setItem('notificationLastClosed', new Date().toISOString());
+}
+
+function initNotification() {
+    if (shouldShowNotification()) {
+        fetchAndDisplayNotification();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', initNotification);
+
+setInterval(() => {
+    if (shouldShowNotification()) {
+        fetchAndDisplayNotification();
+    }
+}, 300000);
