@@ -181,3 +181,147 @@ M   M  A   A  X   X  LLLLL  W   W  A   A  R   R  EEEEE
   .diapo-container:hover .subtitle {
     opacity: 1;
   }
+
+.notification-banner {
+    position: fixed;
+    top: 15px;
+    left: 150px;
+    right: 15px;
+    background: rgba(14, 14, 14, 0.95);
+    color: #1c1c1c;
+    padding: 10px 16px;
+    z-index: 999;
+    font-family: 'Console', monospace;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    max-width: calc(100% - 180px);
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.notification-banner::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    border-radius: 6px 0 0 6px;
+}
+
+.notification-banner[data-marker="verified"]::before {
+    background-color: rgba(26, 127, 75, 0.2);
+}
+
+.notification-banner[data-marker="warn"]::before {
+    background-color: rgba(179, 92, 0, 0.2);
+}
+
+.notification-banner[data-marker="alert"]::before {
+    background-color: rgba(204, 0, 0, 0.2);
+}
+
+.notification-message {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    color: #d3d3d3;
+    line-height: 1.4;
+}
+
+.notification-author {
+    color: #949494;
+    font-size: 0.85rem;
+    opacity: 0.8;
+    white-space: nowrap;
+    margin-left: 8px;
+    font-style: italic;
+}
+
+.close-notification {
+    background: transparent;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: 'Console', monospace;
+    font-size: 1.2rem;
+    line-height: 1;
+    margin-left: 12px;
+    transition: all 0.2s ease;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.close-notification:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #666;
+}
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutSlide {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.notification-banner.show {
+    display: flex;
+    animation: fadeInSlide 0.3s ease forwards;
+}
+
+.notification-banner.hide {
+    animation: fadeOutSlide 0.3s ease forwards;
+}
+
+@media (max-width: 768px) {
+    .notification-banner {
+        left: 15px;
+        right: 15px;
+        top: 80px;
+        max-width: none;
+    }
+    
+    .notification-content {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .notification-author {
+        margin-left: 0;
+        order: 3;
+        width: 100%;
+        font-size: 0.8rem;
+        text-align: right;
+    }
+}
