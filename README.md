@@ -15,7 +15,7 @@ This website showcases projects, software, and web development work by Maxlware.
 - **Home** – Main landing page
 - **404** – Page not found
 - **Credits** – Contributors and acknowledgements
-- **Contact** – Contact page (currently not available)
+- **Contact** – Contact page
 - **CGU** – Terms of Use
 - **Privacy Policy** – How user data is handled
 - **Legal Notice** – Mandatory legal information
