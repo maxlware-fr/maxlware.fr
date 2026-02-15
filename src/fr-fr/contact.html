@@ -14,28 +14,75 @@ M   M  A   A  X   X  LLLLL  W   W  A   A  R   R  EEEEE
 <title>Contact - Maxlware</title>
 <link rel="stylesheet" href="assets/contact/style.css">
 <link rel="icon" href="assets/logo.png">
+<script>
+  // MNTCHECK
+    document.addEventListener("DOMContentLoaded", async () => {
+    try {
+      const res = await fetch("https://api.maxlware.com/v1/com/access", {
+        cache: "no-store"
+      });
+      const data = await res.json();
+
+      if (data.com_access === "false") {
+        window.location.href = "maintenance.html";
+        return;
+      }
+    } catch (e) {
+      window.location.href = "maintenance.html";
+    }
+  });
+</script>
 </head>
 <body>
 <div class="hero-content">
     <div class="title cursor">CONTACT</div>
-    <div class="subtitle">Sélectionnez le canal qui correspond à votre demande.<br><a href="https://maxlware.com/fr-fr.html">Retour</a></div>
+    <div class="subtitle" id="subtitle">Sélectionnez le canal qui correspond à votre demande.<br><a href="https://maxlware.com/fr-fr.html">Retour</a></div>
 
-    <div class="contact-grid">
-        <a class="contact-card" href="mailto:contact@maxlware.com">
-            <div class="card-title">Professionel</div>
-            <div class="card-desc">Par mail (demande sérieuses, collaborations, etc.)</div>
+    <div class="contact-grid" id="contactGrid">
+        <a class="contact-card" href="#" id="proLink">
+            <div class="card-title">Professionnel</div>
+            <div class="card-desc">Par formulaire (demandes sérieuses, collaborations, etc.)</div>
         </a>
 
-        <a class="contact-card" href="https://support.maxlware.fr">
+        <a class="contact-card" href="https://support.maxlware.fr" target="_blank">
             <div class="card-title">Ticket support</div>
-            <div class="card-desc">Géré par l'équipe de Maxlware Developement. Il sert à avoir de l'aide sur les différents services.</div>
+            <div class="card-desc">Géré par l'équipe de Maxlware Développement. Aide sur les services.</div>
         </a>
 
-        <a class="contact-card" href="https://discord.gg/5rUDZ4kXdS">
-            <div class="card-title">Videos, collaborations</div>
-            <div class="card-desc">Rejoiniez le serveur pour savoir les dernières informations.</div>
+        <a class="contact-card" href="https://discord.gg/5rUDZ4kXdS" target="_blank">
+            <div class="card-title">Vidéos, collaborations</div>
+            <div class="card-desc">Rejoignez le serveur Discord pour les dernières infos.</div>
         </a>
     </div>
+
+    <div class="contact-form" id="contactForm" style="display: none;">
+        <h2>Formulaire professionnel</h2>
+        <form id="proForm">
+            <div class="form-group">
+                <label for="email">Votre email :</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="objet">Objet :</label>
+                <input type="text" id="objet" name="objet" required>
+            </div>
+            <div class="form-group">
+                <label for="contenu">Message :</label>
+                <textarea id="contenu" name="contenu" rows="5" required></textarea>
+            </div>
+            <div class="form-actions" id="formActions">
+              <button type="submit" id="submitBtn">Envoyer</button>
+              <button type="button" id="backToGrid">Retour</button>
+            </div>
+            <div class="progress-container" id="progressContainer" style="display: none;">
+              <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-text">Envoi en cours...</span>
+            </div>
+        </form>
+        <div id="formMessage" class="form-message"></div>
+    </div>
 </div>
+
+<script src="assets/contact/send.js"></script>
 </body>
 </html>
