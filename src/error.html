@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+    <title>Error XXX - XXX</title>
+    <link rel="icon" href="assets/logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, code {
+            font: 15px/22px arial, sans-serif;
+        }
+
+        html {
+            background: #121212;
+            color: #e0e0e0;
+            padding: 15px;
+        }
+        
+        body {
+            margin: 7% auto 0;
+            max-width: 390px;
+            min-height: 180px;
+            padding: 30px 0 15px;
+            background-position: 100% 5px;
+            background-repeat: no-repeat;
+            background-size: auto 180px;
+        }
+
+        p {
+            margin: 11px 0 22px;
+            overflow: hidden;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+        }
+
+        ins {
+            color: #aaaaaa;
+            text-decoration: none;
+        }
+
+        a img {
+            border: 0;
+        }
+
+        #logo {
+            display: inline-block;
+            height: 54px;
+            width: 150px;
+            background: url('https://maxlware.com/assets/logo.png') no-repeat;
+            background-size: contain;
+            margin-left: -5px;
+            filter: brightness(1.2);
+        }
+
+        @media only screen and (min-resolution: 192dpi),
+               only screen and (-webkit-min-device-pixel-ratio: 2) {
+            #logo {
+                background-image: url('https://maxlware.com/assets/logo.png');
+                background-size: 100% 100%;
+            }
+        }
+
+        @media screen and (max-width: 772px) {
+            body {
+                background-image: none !important;
+                margin-top: 0;
+                max-width: none;
+                padding-right: 0;
+            }
+        }
+    </style>
+    <script>
+  // MNTCHECK
+    document.addEventListener("DOMContentLoaded", async () => {
+    try {
+      const res = await fetch("https://api.maxlware.com/v1/com/access", {
+        cache: "no-store"
+      });
+      const data = await res.json();
+
+      if (data.com_access === "false") {
+        window.location.href = "maintenance.html";
+        return;
+      }
+    } catch (e) {
+      window.location.href = "maintenance.html";
+    }
+  });
+</script>
+</head>
+<body>
+    <a href="https://maxlware.com">
+        <span id="logo" aria-label="Maxlware"></span>
+    </a>
+    <p>
+        <b>XXX.</b>
+        <ins>That’s an error.</ins>
+    </p>
+    <p>
+        Loading.<br>
+        <ins>That’s all we know.</ins>
+    </p>
+
+<script src="fr-fr/assets/error.js"></script>
+</body>
+</html>
